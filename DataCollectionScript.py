@@ -27,10 +27,12 @@ def func(version1,version2) :
     csv1 = pd.read_csv(version1)
     csv1 = csv1[columns]
     csv1.dropna(inplace=True)
+    csv1 = csv1[csv1.CountLineCode > 0]
     
     csv2 = pd.read_csv(version2)
     csv2 = csv2[columns]
     csv2.dropna(inplace=True)
+    csv2 = csv2[csv2.CountLineCode > 0]
     
     names = csv1.Name.tolist()
     ans = []
